@@ -13,7 +13,9 @@ use App\Universe;
 $console  = new Console();
 $universe = new Universe(25, 25, $glider);
 
+$iterations = $argv[1] ?? 80;
+
 (new Game())
     ->setUniverse($universe)
     ->setView($console)
-    ->run(80);
+    ->run((int)$iterations);

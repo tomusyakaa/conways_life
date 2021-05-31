@@ -29,6 +29,20 @@ class Universe extends AbstractUniverse
     private array $toBorn = [];
 
     /**
+     * Universe constructor.
+     * @param int $width
+     * @param int $height
+     * @param array $aliveCells
+     */
+    public function __construct(int $width, int $height, array $aliveCells)
+    {
+        parent::__construct($width, $height);
+
+        // Fill grid with cells.
+        $this->fillGrid($aliveCells);
+    }
+
+    /**
      *  Make new generation of cells that depends on rules:
      *
      * 1. Any live cell with fewer than two live neighbors dies as if caused by underpopulation.
@@ -42,39 +56,19 @@ class Universe extends AbstractUniverse
         $cells = $this->grid->getCells();
         $this->generationCount++;
 
-        $toBorn = $toKill = [];
-
         for ($x = 0; $x < $this->grid->getHeight(); $x++) {
             for ($y = 0; $y < $this->grid->getWidth(); $y++) {
-                // All cell activity is determined by the neighbor count.
                 $neighborCount = $this->grid->countAliveNeighbors($x, $y);
 
-                if ($cells[$x][$y]->isAlive() && ($neighborCount < 2 || $neighborCount > 3)) {
-                    $toKill[] = [$x, $y];
-                }
-                if (!$cells[$x][$y]->isAlive() && $neighborCount === 3) {
-                    $toBorn[] = [$x, $y];
-                }
+                $this->fillKillQueue($cells[$x][$y], $neighborCount);
+                $this->fillBornQueue($cells[$x][$y], $neighborCount);
             }
         }
 
-        foreach ($toKill as $coordinate) {
-            list($x, $y) = $coordinate;
-            $cells[$x][$y]->setLifeStatus(Cell::STATUS_DEAD);
-        }
-
-        foreach ($toBorn as $coordinate) {
-            list($x, $y) = $coordinate;
-            $cells[$x][$y]->setLifeStatus(Cell::STATUS_ALIVE);
-        }
-
-//                $this->fillBornQueue($this->grid->getCell($x, $y), $neighborCount);
-//                $this->fillKillQueue($this->grid->getCell($x, $y), $neighborCount);
-//            }
-//        }
-//
-//        $this->runQueues();
+        $this->runQueues();
+        $this->toKill = $this->toBorn = [];
     }
+
 
     /**
      * Fill kill queue
@@ -115,6 +109,27 @@ class Universe extends AbstractUniverse
         foreach ($this->toKill as $cell) {
             $cell->setLifeStatus(Cell::STATUS_DEAD);
         }
+    }
 
+    /**
+     * @param array $aliveCells
+     */
+    protected function fillGrid(array $aliveCells)
+    {
+        // Feel grid with empty cells
+        for ($x = 0; $x < $this->grid->getWidth(); $x++) {
+            for ($y = 0; $y < $this->grid->getHeight(); $y++) {
+                $this->grid->setCell(Cell::getDead(), $x, $y);
+            }
+        }
+
+        // Feel grid with alive cells
+        foreach ($aliveCells as $aliveCell) {
+            list($x, $y) = $aliveCell;
+
+            if ($x && $y) {
+                $this->grid->getCell($x, $y)->setLifeStatus(Cell::STATUS_ALIVE);
+            }
+        }
     }
 }

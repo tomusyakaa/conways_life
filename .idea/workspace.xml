@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e836fc68-8646-4dea-858b-408f36807515" name="Default Changelist" comment="" />
+    <list default="true" id="e836fc68-8646-4dea-858b-408f36807515" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/AbstractUniverse.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/AbstractUniverse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Game.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Game.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/GenerationInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/GenerationInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Cell.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Cell.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Model/Grid.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Model/Grid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Pattern/glider.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/Universe.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/Universe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/View/Console.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/View/Console.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/View/ViewInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/View/ViewInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/ViewContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/ViewContext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game/ViewableInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Game/ViewableInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +34,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1tGIYa7pgq2CscNV4qGGNZgDicN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,11 +69,22 @@
       <option name="presentableId" value="Default" />
       <updated>1622389048458</updated>
       <workItem from="1622389049696" duration="767000" />
-      <workItem from="1622389992274" duration="26683000" />
+      <workItem from="1622389992274" duration="31115000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

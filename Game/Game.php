@@ -8,6 +8,7 @@ use App\View\ViewInterface;
 
 /**
  * Class Game
+ *
  * @package App
  */
 class Game
@@ -25,6 +26,7 @@ class Game
 
     /**
      * @param ViewInterface $view
+     *
      * @return $this
      */
     public function setView(ViewInterface $view): self
@@ -36,6 +38,7 @@ class Game
 
     /**
      * @param AbstractUniverse $abstractUniverse
+     *
      * @return $this
      */
     public function setUniverse(AbstractUniverse $abstractUniverse): self
@@ -46,6 +49,8 @@ class Game
     }
 
     /**
+     * Run game till $iterations done.
+     *
      * @param int $iterations
      */
     public function run(int $iterations): void

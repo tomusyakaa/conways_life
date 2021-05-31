@@ -21,56 +21,25 @@ class Cell
      */
     private bool $lifeStatus;
 
-    /**
-     * @var int
-     */
-    private int $x;
-
-    /**
-     * @var int
-     */
-    private int $y;
-
-    /**
-     * @return int
-     */
-    public function getX(): int
-    {
-        return $this->x;
-    }
-
-    /**
-     * @return int
-     */
-    public function getY(): int
-    {
-        return $this->y;
-    }
 
     /**
      * Cell constructor.
      *
      * @param bool $lifeStatus
      */
-    private function __construct(bool $lifeStatus, $x, $y)
+    private function __construct(bool $lifeStatus)
     {
         $this->lifeStatus = $lifeStatus;
-
-        $this->x = $x;
-        $this->y = $y;
     }
 
     /**
      * Return new dead cell.
      *
-     * @param int $x
-     * @param int $y
-     *
      * @return Cell
      */
-    public static function getDead(int $x, int $y): Cell
+    public static function getDead(): Cell
     {
-        return new self(self::STATUS_DEAD, $x, $y);
+        return new self(self::STATUS_DEAD);
     }
 
     /**

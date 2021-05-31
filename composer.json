@@ -4,5 +4,11 @@
 
   "autoload": {
     "psr-4": {"App\\": "Game/"}
+  },
+  "scripts": {
+    "run": [
+      "composer dump-autoload",
+      "php main.php"
+    ]
   }
 }

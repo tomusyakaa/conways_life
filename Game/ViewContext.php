@@ -7,10 +7,21 @@ namespace App;
 class ViewContext
 {
 
+    /**
+     * @var int
+     */
     private int $generationNumber;
 
+    /**
+     * @var array
+     */
     private array $cells;
 
+    /**
+     * ViewContext constructor.
+     * @param int $generationNumber
+     * @param array $cells
+     */
     public function __construct(int $generationNumber, array $cells)
     {
         $this->cells            = $cells;

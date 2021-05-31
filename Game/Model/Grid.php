@@ -30,32 +30,11 @@ class Grid
      * Grid constructor.
      * @param int $width
      * @param int $height
-     * @param array $aliveCells
      */
-    public function __construct(int $width, int $height, array $aliveCells)
+    public function __construct(int $width, int $height)
     {
         $this->width = $width;
         $this->height = $height;
-
-        // Feel grid with empty cells
-        for ($x = 0; $x < $width; $x++) {
-            for ($y = 0; $y < $height; $y++) {
-                $alive = false;
-
-                if (!$alive) {
-                    $this->cells[$x][$y] = Cell::getDead($x, $y);
-                }
-            }
-        }
-
-        // Feel grid with alive cells
-        foreach ($aliveCells as $aliveCell) {
-            list($x, $y) = $aliveCell;
-
-            if (isset($this->cells[$x][$y])) {
-                $this->cells[$x][$y]->setLifeStatus(Cell::STATUS_ALIVE);
-            }
-        }
     }
 
 
@@ -118,6 +97,16 @@ class Grid
     }
 
     /**
+     * @param Cell $cell
+     * @param int $x
+     * @param int $y
+     */
+    public function setCell(Cell $cell, int $x, int $y): void
+    {
+        $this->cells[$x][$y] = $cell;
+    }
+
+    /**
      * @param int $x
      * @param int $y
      * @return array
@@ -142,6 +131,8 @@ class Grid
     }
 
     /**
+     * Count live cells around cell with position x,y.
+     *
      * @param int $x
      * @param int $y
      * @return int

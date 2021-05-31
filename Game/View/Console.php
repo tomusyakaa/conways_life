@@ -7,9 +7,18 @@ namespace App\View;
 use App\Model\Grid;
 use App\ViewContext;
 
+/**
+ * Class Console
+ * @package App\View
+ */
 class Console implements ViewInterface
 {
 
+    /**
+     * Draw matrix of cells in console.
+     *
+     * @param ViewContext $context
+     */
     public function draw(ViewContext $context): void
     {
         echo "____________________________________________________________________________\n";
